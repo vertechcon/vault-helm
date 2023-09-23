@@ -690,6 +690,14 @@ server:
     # If type is set to "NodePort", a specific nodePort value can be configured,
     # will be random if left blank.
     #nodePort: 30000
+        
+    # If type is set to "LoadBalancer", a specific ip value can be configured,
+    # will be automatically assigned if left blank.
+    # loadBalancerIP: xx.xx.xx.xx
+
+    # If type is set to "LoadBalancer", a specific loadBalancerClass value can be configured,
+    # default load balancer will be used if left empty.
+    # loadBalancerClass: "some load balancer"
 
     # When HA mode is enabled
     # If type is set to "NodePort", a specific nodePort value can be configured,
@@ -984,6 +992,7 @@ ui:
   #   - 1.78.23.3/32
 
   # loadBalancerIP:
+  # loadBalancerClass:
 
   # Extra annotations to attach to the ui service
   # This can either be YAML or a YAML-formatted multi-line templated string map

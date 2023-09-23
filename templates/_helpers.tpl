@@ -997,6 +997,9 @@ Supported inputs are Values.ui
 {{- if .loadBalancerIP }}
   loadBalancerIP: {{ .loadBalancerIP }}
 {{- end }}
+{{- if .loadBalancerClass }}
+  loadBalancerClass: {{ .loadBalancerClass }}
+{{- end }}
 {{- with .loadBalancerSourceRanges }}
   loadBalancerSourceRanges:
 {{- range . }}

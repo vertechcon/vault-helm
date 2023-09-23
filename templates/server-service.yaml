@@ -27,6 +27,12 @@ spec:
   {{- if .Values.server.service.clusterIP }}
   clusterIP: {{ .Values.server.service.clusterIP }}
   {{- end }}
+  {{- if and (.Values.server.service.loadBalancerIP) (eq (.Values.server.service.type | toString) "LoadBalancer") }}
+  loadBalancerIP: {{ .Values.server.service.loadBalancerIP }}
+  {{- end }}
+  {{- if and (.Values.server.service.loadBalancerClass) (eq (.Values.server.service.type | toString) "LoadBalancer") }}
+  loadBalancerClass: {{ .Values.server.service.loadBalancerClass }}
+  {{- end }}
   {{- include "service.externalTrafficPolicy" .Values.server.service }}
   # We want the servers to become available even if they're not ready
   # since this DNS is also used for join operations.
